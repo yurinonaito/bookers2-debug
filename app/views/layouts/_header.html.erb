@@ -54,5 +54,8 @@
       </div>
     </div>
   </nav>
+  <% if user_signed_in? %>
+  <p><%= render 'layouts/search' %></p>
+  <% end %>
 </header>
 <%= yield %>
