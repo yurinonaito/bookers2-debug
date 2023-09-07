@@ -13,10 +13,6 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
 
-    respond_to do |format|
-      format.json { render json: @room }
-    end
-
     if Entry.where(user_id: current_user.id, room_id: @room.id).present?
       @messages = @room.messages
       @message = Message.new
