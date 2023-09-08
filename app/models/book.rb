@@ -26,6 +26,10 @@ class Book < ApplicationRecord
     else
       @book = Book.all
     end
+    
+    scope :latest, -> { order(created_at: :desc) }
+    scope :rating, -> {order(star: :desc)}
+    
   end
   
   
