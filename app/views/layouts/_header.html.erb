@@ -55,7 +55,11 @@
     </div>
   </nav>
   <% if user_signed_in? %>
+  <div>
   <%= render 'layouts/search' %>
+  <%= render 'tag_searches/tagsearch' %>
+  </div>
+
   <% end %>
 </header>
 <%= yield %>
